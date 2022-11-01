@@ -1,1 +1,324 @@
+<template>
+<!-- Modal/Popup Box LWC starts here -->
+<template if:true={isModalOpen}>
+<div class="slds-box slds-theme_shade slds-model">
+    <!-- Modal/Popup Box LWC header here -->
+    <header class="slds-modal__header">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+            <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+        </button>
+       
+    </header>
+    <!-- Modal/Popup Box LWC body starts here -->
+    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <div class="header">
+            <table>
+                <tr style="height:30px;">
+                    <td style="float: left;"> {name}</td>
+                 
+                    <td style="float: right;">{date}</td>
+                </tr>
+            </table>
+        
+        </div>
+        <center><b><u>Current Account Status</u></b></center>
+        <div >
+        <p>Customer Since:</p>
+        <p>Asserts:</p>
+        <table style="margin-left: 50px;">
+            <tr style="background-color: rgb(207, 199, 199);">
+                <th>Name </th>
+                <th >Install Date</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td>Test</td>
+                <td>{date}</td>
+                <td>21</td>
+            </tr>
+        </table>
+        <p>Last Consumable Order Date:</p>
+        <p>Current Tier Status:</p>
+        <p>Revenue Needed to Achieve Next Tier:</p>
+    
+        </div>
+        <center><b>Check-In</b></center>
+        <table>
+            <tr>
+                <td>What I enjoy most about HF is…</td>
+                <td><lightning-input type="text" class="inputfeild"></lightning-input>
+                </td>
+            </tr>
+            <tr>
+                <td>Knowing what I know now, I would change…. </td>
+                <td><lightning-input type="text" class="inputfeild" ></lightning-input>
+                </td>
+            </tr>
+            <tr>
+                <td>What I enjoy most about HF is…</td>
+                <td><lightning-input type="text" class="inputfeild" ></lightning-input></td>
+            </tr>
+        </table>
+    
+        <table>
+            <tr>
+                <th>Treatment</th>
+                <th>Client Charge</th>
+                <th>Current # Per Week</th>
+                <th>Goal Per Week</th>
+            </tr>
+            <tr>
+                <td> <span >Signature</span><br></td>
+                <td><lightning-input type="text" ></lightning-input> </td>
+                <td><lightning-input type="text" ></lightning-input> </td>
+                <td><lightning-input type="text" ></lightning-input> </td>
+                
+            </tr>
+            <tr>
+            <td> <span >Deluxe</span><br></td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            
+        </tr>
+        <tr>
+            <td> <span >Platinum</span><br></td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            
+        </tr>
+        <tr>
+            <td> <span >Body/Other</span><br></td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            
+        </tr>
+        <tr>
+            <td> <span >Keravive</span><br></td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            <td><lightning-input type="text" ></lightning-input> </td>
+            
+        </tr>
+        </table>
+        <center>          <button class="slds-button slds-button_outline-brand  btn"  style="margin-left:10px;"  title="Calculate">Calculate</button>
+        </center> 
+                <!--  -->
+        <div class="sldn-box">
+            <center><b><u>Delivery System & ROI</u></b></center>
+            <h4>Current Quarterly Revenue:</h4>
+            <h4>Goal Quarterly Revenue:</h4>
+            <h3>Time for Another System?:</h3>
+            <table>
+            <tr>
+                <td>Trade Up?</td>
+                <td><lightning-input type="text"  class="inputfeild"></lightning-input> </td>
+            </tr>
+        </table>
+        </div>
 
+        <div class="sldn-box">
+            <center><b><u>Goal Setting</u></b></center>
+            
+            <table>
+            <tr>
+                <td><h3>Increase in Quarterly Revenue based on Goals:</h3></td>
+            
+            </tr>
+            <tr>
+                <td><h3>Previous %:</h3></td>
+              
+            </tr>
+            <tr>
+                <td><h3>Current %:</h3></td>
+              
+            </tr>
+                <tr>
+                    <td><h3>Goal %:</h3></td>
+                    <td></td>
+                    <td></td>
+                    <td><lightning-input type="text"  class="inputfeild"></lightning-input> </td>
+                </tr>
+            </table>
+            
+
+        </div>
+<center>          <button class="slds-button slds-button_outline-brand  btn"  style="margin-left:10px;" onclick={model2} title="Next">Next</button>
+</center>        </div>
+    <!-- Modal/Popup Box LWC footer starts here -->
+    
+</div>
+
+
+
+<!-- ============================================================================== End 1 model================================================================================================ -->
+
+<!-- ============================================================================== 2 model================================================================================================ -->
+</template>
+<template if:true={screen2}>
+<!-- Modal/Popup Box LWC starts hereslds-box slds-theme_shade slds-model -->
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-box slds-fade-in-open">
+    <div class="">
+        <!-- Modal/Popup Box LWC header here -->
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+            <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+        </button>
+    
+        <!-- Modal/Popup Box LWC body starts here -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+            <div class="header">
+                <table>
+                    <tr style="height:30px;">
+                        <td> <h2>{name} </h2></td>
+                        <td style="float: right;">{date}</td>
+                    </tr>
+                </table>
+            </div>
+            <center> <b><u>Opportunities for Personalizations</u></b></center>
+
+                <table>
+                    <tr>
+                        <td>Boosters</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                    <tr>
+                        <td>Perk</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                    <tr>
+                        <td>Keravive</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                </table>
+                <center> <b><u>Marketing</u></b></center>
+                <table>
+                    <tr>
+                        <td>Social Media</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                    <tr>
+                        <td>Events</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                </table>
+<center> <b><u>Training & Engagement</u></b></center>
+              
+                <p>Past Courses Attended:</p>
+                <table style="margin-left: 50px;">
+                    <tr style="background-color: rgb(207, 199, 199);">
+                        <th>Course 1 </th>
+                        <th>Course 2</th>
+                        <th>Course 3</th>
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr>
+                        <td>Future Courses Interested In</td>
+                        <td><lightning-input type="text" class="inputfeild"></lightning-input></td>
+                    </tr>
+                    </table>
+                    <center> <b><u>What else would you like to talk about?</u></b></center>
+
+                    <table>
+                    <tr>
+                    <td><lightning-input type="text" ></lightning-input></td>
+                    </tr>
+                </table>
+            
+            
+               <center> <button class="slds-button slds-button_outline-brand  "  style="margin:5px;" onclick={model4} title="Previous">Previous</button> 
+            <button class="slds-button slds-button_outline-brand " style="margin: 5px;" onclick={model3} title="Next">Next</button></center>
+
+        </div>
+        <!-- Modal/Popup Box LWC footer starts here -->
+        
+    </div>
+</section>
+<!-- <div class="slds-backdrop slds-backdrop_open"></div> -->
+</template>
+<!-- ============================================================================== End 2 model================================================================================================ -->
+
+<!-- ============================================================================== 3 model================================================================================================ -->
+
+<template if:true={screen3}>
+<!-- Modal/Popup Box LWC starts here -->
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-box slds-fade-in-open ">
+    <div class="">
+        
+        <!-- Modal/Popup Box LWC header here -->
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+            <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+        </button>
+
+
+
+        <!-- Modal/Popup Box LWC body starts here -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+            <div class="header">
+                <table>
+                    <tr>
+                        <td> <h2>{name} </h2></td>
+                        <td style="float: right;">{date}</td>
+                    </tr>
+                </table>
+            
+            </div>
+            <center><b><u>Action Plan</u></b></center>
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <th>Date to be Completed</th>
+                    <th>Contact Responsible</th>
+                </tr>
+                <tr>
+                    <td><lightning-input type="text"></lightning-input></td>
+                    <td><lightning-input type="date"></lightning-input></td>
+                    <td><lightning-input type="text"></lightning-input></td>
+                </tr>
+                <tr>
+                    <td><lightning-input type="text"></lightning-input></td>
+                    <td><lightning-input type="date"></lightning-input></td>
+                    <td><lightning-input type="text"></lightning-input></td>
+                </tr>
+                <tr>
+                    <td><lightning-input type="text"></lightning-input></td>
+                    <td><lightning-input type="date"></lightning-input></td>
+                    <td><lightning-input type="text"></lightning-input></td>
+                </tr>
+            </table>
+            
+            <center>
+                <button class="slds-button slds-button_outline-brand "  style="margin: 10px;" onclick={model2} title="Previous">Previous</button>
+            <button class="slds-button slds-button_outline-brand  "  style="margin: 10px;" onclick={submitDetails} title="Next">Submit</button>
+            </center>
+            </div>
+        
+        <!-- Modal/Popup Box LWC footer starts here -->
+        
+    </div>
+    
+</section>
+<!-- <div class="slds-backdrop slds-backdrop_open"></div> -->
+</template>
+<!-- ==============================================================================End  3 model================================================================================================ -->
+
+</template>     
